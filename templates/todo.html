@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>To Do</title>
+{% endblock %}
+
+{% block body %}
+<h1>~~To Do List~~</h1>
+
+    <hr>
+    <h2>*****</h2>
+    <form action='/' method='POST'>
+        Add To Do... <input type= 'text' name= 'title' id='title'>
+        <br>
+        <input type= 'submit' value= 'Add'>    
+    </form>
+    <hr>
+
+    {% for todo in todos %}
+        <h2>{{ todo.title }}</h2>
+
+        <a href='/delete/{{todo.id}}'>Complete</a>
+        <a href='/delete/{{todo.id}}'>Delete</a>
+        <a href='/edit/{{todo.id}}'>Edit</a>
+        <hr>
+    {% endfor %}
+
+{% endblock %}

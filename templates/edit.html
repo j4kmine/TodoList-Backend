@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Edit To Do</title>
+{% endblock %}
+
+{% block body %}
+<h1>~~Edit?~~</h1>
+
+    <hr>
+    <h2>Edit</h2>
+    <form action='/edit/{{todo.id}}' method='POST'>
+        To Do: <input type= 'text' name= 'title' id='title' value="{{todo.title}}">
+        <br>
+        <input type= 'submit' value= 'Add'>    
+    </form>
+    <hr>
+{% endblock %}
